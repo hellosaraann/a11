@@ -4,7 +4,7 @@ body {
   line-height: 1.5em;
   text-transform: uppercase;
   letter-spacing: .2em;
-  font-size: .8em;
+  font-size: .75em;
   color: #404541;
 }
 
@@ -16,9 +16,15 @@ h2 {
   font-size: 1rem;
 }
 
+h1 {
+  font-size: .5em;
+  line-height: 2em;
+}
+
 .special {
   font-weight: 900;
   color: #7BBBA8;
+  font-size: 1.5em;
 }
 
 /* table and container styles */
@@ -66,16 +72,27 @@ h2 {
 }
 
 .item.small {
-  width: 17%;
+  width: 15%;
 }
 
 img {
   width: 100%;
 }
 
+button {
+  background-color: #7BBBA8;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .2em;
+  padding: 1em;
+  border: 2px solid #F0D82F;
+}
+
 /* conditional styles */
 
-.odd p.item.small {
+.odd p.item.small,
+.odd div.item.small {
   background-color: #fcfbf3;
 }
 

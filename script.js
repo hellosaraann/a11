@@ -38,6 +38,33 @@ const favoriteHousePlants = [{
 var vm = new Vue({
   el: "#myCollection",
   data: {
-    plants: favoriteHousePlants
-  }
+    plants: favoriteHousePlants,
+		imageInput: '',
+		nameInput: '',
+		lightInput: '',
+		leavesInput: '',
+		specialInput: ''
+  },
+	methods: {
+		deletePlant: function(plantObject) {
+			this.plants = this.plants.filter( function(plant) {
+				if (plant.name !== plantObject.name) {
+					return true;
+				} else {
+					return false;
+				}
+			})
+		},
+		addPlant: function(){
+			let newPlant = {
+				image: this.imageInput,
+				name: this.nameInput,
+				light: this.lightInput,
+				leaves: this.leavesInput,
+				special: this.specialInput
+			};
+			this.lights.push(newPlant);
+			this.imageInput = this.nameInput = this.lightInput = this.leavesInput = this.specialInput = '';
+		}
+	}
 });
