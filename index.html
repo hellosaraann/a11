@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <title>My Favorite Houseplants</title>
+  </head>
+  <body>
+    <div id="myCollection" class='table' v-block>
+      <div class='container'>
+        <h1 class='item list-title'>
+          A Few Favorite <br />
+          <span class='special'>Houseplants</span>
+        </h1>
+      </div>
+      <div class="container">
+        <h2 class="item small list-headers">Photo</h2>
+        <h2 class="item small list-headers">Name</h2>
+        <h2 class="item small list-headers">Light</h2>
+        <h2 class="item small list-headers">Leaves</h2>
+        <h2 class="item small list-headers">Special</h2>
+      </div>
+      <div  class="container"
+            v-for='(plant, index) in plants'
+            v-bind:class='{
+              odd: (index+1) % 2 !== 0,
+              favoritePlant: plant.specialThing.toLowerCase().includes("favorite")
+            }'>
+          <p class='item small photo'>
+            <img v-bind:src='plant.plantPic' />
+          </p>
+          <p class='item small plant-name'>{{ plant.name }}</p>
+          <p class='item small'>{{ plant.light }}</p>
+          <p class='item small'>{{ plant.leaves }}</p>
+          <p class='item small'>{{ plant.specialThing }}</p>
+      </div>
+
+      <div class='container footer'>
+        <div class="item">
+          <div class='favoritePlant key'></div>
+          <p class='key'>= favorite.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
