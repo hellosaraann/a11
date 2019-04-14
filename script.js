@@ -57,14 +57,14 @@ var vm = new Vue({
 		},
 		addPlant: function(){
 			let newPlant = {
-				image: this.imageInput,
+				plantPic: this.plantPicInput,
 				name: this.nameInput,
-				light: this.lightInput,
+				light:  this.lightInput,
 				leaves: this.leavesInput,
-				special: this.specialInput
+				specialThing: this.specialInput
 			};
-			this.lights.push(newPlant);
-			this.imageInput = this.nameInput = this.lightInput = this.leavesInput = this.specialInput = '';
+			this.plants.push(newPlant);
+			this.plantPicInput = this.nameInput = this.lightInput = this.leavesInput = this.specialInput = '';
 		}
 	}
 });
