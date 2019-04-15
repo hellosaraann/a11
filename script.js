@@ -39,7 +39,7 @@ var vm = new Vue({
   el: "#myCollection",
   data: {
     plants: favoriteHousePlants,
-		imageInput: '',
+		plantPicInput: '',
 		nameInput: '',
 		lightInput: '',
 		leavesInput: '',
